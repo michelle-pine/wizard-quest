@@ -36,6 +36,10 @@ class GoDialog extends React.Component {
           this.setState({loaderShow: false});
           this.setState({modalOpen: true});
         }
+      }.bind(this),
+      function(error) {
+        this.setState({loaderShow: false});
+        alert("You don't have geolocation services enabled. Enable them before continuing.")
       }.bind(this));
     }
     else {

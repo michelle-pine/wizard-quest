@@ -9,7 +9,7 @@ class Button extends React.Component {
 
   render() {
     return (
-      <button className="quest-button" onClick={this.props.onClick}>
+      <button className={`quest-button ${this.props.dark ? "dark" : null}`} onClick={this.props.onClick}>
         {this.props.text}
       </button>
     );
@@ -22,6 +22,7 @@ Button.defaultProps = {
 Button.propTypes = {
   text: PropTypes.string,
   onClick: PropTypes.func,
+  dark: PropTypes.bool,
 };
 
 export default Button;

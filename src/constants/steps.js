@@ -37,7 +37,7 @@ export let STEPS = {
       [42.337921, -71.088206],
       [42.337921, -71.088206],
     ],
-    //boundingBox: SAMPLE_COORDS,
+    // boundingBox: SAMPLE_COORDS,
     description: "Find the spellbook. Go where curious minds find books to read.",
   },
   4: {
@@ -49,6 +49,12 @@ export let STEPS = {
   5: {
     type: "spellbook",
     hiddenDesc: "At this step, the user can read the spellbook.",
+  },
+  6: {
+    type: "audio",
+    button: "Next",
+    hiddenDesc: "At this step, the cat explains the truth.",
+    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
   }
 }
 

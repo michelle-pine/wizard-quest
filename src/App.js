@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import Button from './components/Button/Button'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onButtonClick = this.onButtonClick.bind(this);
+  }
+  
+  onButtonClick() {
+    this.props.history.push("/step/1");
+  }
+  
+  render() {
+    return (
+      <div className="App content-wrapper">
+        <div className="content-container">
+          <h1 className="app-title">
+            WizardQuest
+          </h1>
+        </div>
+        <Button text="Start" onClick={this.onButtonClick} />
+      </div>
+    );
+  }
 }
 
 export default App;

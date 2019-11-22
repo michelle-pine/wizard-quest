@@ -1,13 +1,171 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+//primary colors
+$dark-blue: rgb(0, 48, 88);
+$gold: #f7d364;
+
+//secondary colors
+$blue: #0018A8;
+$dark-gold: #AE7C00;
+$navy: rgb(19, 37, 58);
+
+//text and accent colors
+$black: #000000;
+$white: #FFF;
+
+//font importation
+@import url("https://fonts.googleapis.com/css?family=Cormorant:400,500,700|Montserrat:400&display=swap");
+
+//responsive breakpont
+$breakpoint-default: 992px;
+
+//default transition
+@mixin transition {
+  transition: 0.3s all;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@mixin shadow {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
+
+//header font stack
+@mixin header-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin body-font {
+  font-family: 'Cormorant', serif;
+}
+
+@mixin header-typography($size) {
+  @include header-font;
+  font-size: $size;
+  line-height: $size * 1.618;
+}
+
+@mixin body-typography($size) {
+  @include body-font;
+  font-size: $size;
+  line-height: $size * 1.618;
+}
+
+$body-size: 18px;
+$h1-size: 36px;
+$h2-size: 28px;
+$h3-size: 24px;
+$h4-size: 20px;
+
+@mixin body-text {
+  @include body-typography($body-size);
+  font-weight: 400;
+  color: $white;
+}
+
+@mixin h1 {
+  @include header-typography($h1-size);
+  font-weight: 400;
+  color: $gold;
+}
+
+@mixin h2 {
+  @include header-typography($h2-size);
+  font-weight: 400;
+  color: $gold;
+}
+
+@mixin h3 {
+  @include body-typography($h3-size);
+  font-weight: 700;
+  color: $dark-gold;
+}
+
+@mixin h4 {
+  @include body-typography($h4-size);
+  font-weight: 500;
+  color: $white;
+}
+
+@mixin button {
+  font-weight: 500;
+  min-width: 150px;
+  color: $white;
+  font-size: $h4-size;
+  @include header-typography($h4-size);
+  font-weight: 500;
+  padding: 10px;
+  border: 0;
+  text-transform: uppercase;
+  @include shadow;
+  border-radius: 100px;
+  background: $dark-gold; 
+}
+
+a {
+  color: $gold;
+  @include transition;
+}
+
+a:hover {
+  color: $dark-gold;
+  text-decoration: underline;
+}
+
+
+body {
+  @include body-text;
+  background: $dark-blue;
+  margin: 0;
+  padding: 0;
+  @include transition;
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+@mixin fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.content-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  @include fade-in;
+}
+
+.content-container {
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 75vw;
+  text-align: center;
+  @include shadow;
+  background: $navy;
+}
+

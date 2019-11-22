@@ -4,10 +4,13 @@ import { Provider } from 'react-redux'
 import { Route, HashRouter as Router } from 'react-router-dom'
 
 import './index.scss';
+
 //stores
 import store from './store/index'
 
 import App from './App';
+import Step from './pages/Step/Step';
+
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
@@ -16,6 +19,7 @@ const routing = (
       <Router basename='/'>
         <div>
           <Route exact path="/" component={App} />
+          <Route path="/step/:id" component={Step} />
         </div>
       </Router>
     </div>

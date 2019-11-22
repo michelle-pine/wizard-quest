@@ -9,18 +9,19 @@ class Button extends React.Component {
 
   render() {
     return (
-    <div>
-    </div>
+      <button className="quest-button" onClick={this.props.onClick}>
+        {this.props.text}
+      </button>
     );
   }
 };
 
 Button.defaultProps = {
-
 };
 
 Button.propTypes = {
-
+  text: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export default Button;

@@ -5,7 +5,7 @@ import fadeOut from '../../index';
 import Button from '../../components/Button/Button';
 import Loader from '../../components/Loader/Loader'
 import Modal from '../Modal/Modal';
-import { isEqual } from 'geolocation-utils';
+import { insidePolygon } from 'geolocation-utils';
 
 
 class GoDialog extends React.Component {
@@ -21,14 +21,25 @@ class GoDialog extends React.Component {
     }
   }
 
+  convertCoordinates(lat, long) {
+    return [long, lat];
+  }
+
+  insideBoundingBox(location, step) {
+    const box = step.boundingBox;
+    console.log(box);
+    let convertedBox = box.map((coord) => this.convertCoordinates(coord[0], coord[1]));
+    console.log(convertedBox);
+    console.log(location);
+    return insidePolygon(location, convertedBox);
+  }
 
   onButtonClick(e) {
-    const desired = {longitude: this.props.step.longitude, latitude: this.props.step.latitude};
     this.setState({loaderShow: true});
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position){
         let cur = [position.coords.longitude, position.coords.latitude];
-        if (isEqual(desired, cur, this.props.step.epsilon)) {
+        if (this.insideBoundingBox(cur, this.props.step)) {
           console.log(position)
           fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
         }

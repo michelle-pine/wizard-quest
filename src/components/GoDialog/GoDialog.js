@@ -25,17 +25,24 @@ class GoDialog extends React.Component {
   onButtonClick(e) {
     const desired = {longitude: this.props.step.longitude, latitude: this.props.step.latitude};
     this.setState({loaderShow: true});
-    navigator.geolocation.getCurrentPosition(function(position){
-      let cur = [position.coords.longitude, position.coords.latitude];
-      if (isEqual(desired, cur, this.props.step.epsilon)) {
-        console.log(position)
-        fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
-      }
-      else {
-        this.setState({loaderShow: false});
-        this.setState({modalOpen: true});
-      }
-    }.bind(this));
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position){
+        let cur = [position.coords.longitude, position.coords.latitude];
+        if (isEqual(desired, cur, this.props.step.epsilon)) {
+          console.log(position)
+          fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
+        }
+        else {
+          this.setState({loaderShow: false});
+          this.setState({modalOpen: true});
+        }
+      }.bind(this));
+    }
+    else {
+      this.setState({loaderShow: false});
+      alert("You don't have geolocation services enabled. Enable them before continuing.")
+    }
+
   }
 
   onModalClose(e) {

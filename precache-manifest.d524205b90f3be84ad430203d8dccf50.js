@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "388087d7e9509b3daa19bf967faf16c4",
+    "revision": "b653c950841725c241f652d5e875e1ae",
     "url": "/wizard-quest/index.html"
   },
   {
-    "revision": "849296c986a8f18a3241",
+    "revision": "b6ffadfaa5928568ccab",
     "url": "/wizard-quest/static/css/main.705d8713.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wizard-quest/static/js/2.f9b6d52f.chunk.js"
   },
   {
-    "revision": "849296c986a8f18a3241",
-    "url": "/wizard-quest/static/js/main.4582a9b2.chunk.js"
+    "revision": "b6ffadfaa5928568ccab",
+    "url": "/wizard-quest/static/js/main.01d42a73.chunk.js"
   },
   {
     "revision": "fc1059a3b79f188a815f",

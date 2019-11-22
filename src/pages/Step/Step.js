@@ -10,7 +10,7 @@ class Step extends React.Component {
   render() {
     let id = this.props.match.params.id;
     return (
-    <div className="content-wrapper">
+    <div className="content-wrapper fade-in">
       Step {id}
     </div>
     );

@@ -4,11 +4,11 @@ export const STEPS = {
   },
   1: {
     type: "go-dialog",
-    // latitude: 42.3371,
-    // longitude: -71.0905,
-    latitude: 42.3279784,
-    longitude: -71.10478599999999,
-    epsilon: .0002,
+    latitude: 42.3371,
+    longitude: -71.0905,
+    // latitude: 42.3279784,
+    // longitude: -71.10478599999999,
+    epsilon: .0004,
     description: "Go to Centennial Common"
   },
   2: {

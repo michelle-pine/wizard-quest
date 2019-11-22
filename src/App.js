@@ -7,7 +7,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.onButtonClick = this.onButtonClick.bind(this);
+    navigator.geolocation.getCurrentPosition(function(position){
+      return [position.coords.longitude, position.coords.latitude];
+    });
+      
   }
+  
 
   onButtonClick(e) {
     fadeOut(this.props, e, "step/1");

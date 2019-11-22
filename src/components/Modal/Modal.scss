@@ -1,0 +1,47 @@
+@import '../../index.scss';
+
+.modal-container {
+  background: rgba(0,0,0,0.75);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: $navy;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 20px 15px;}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: $navy;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  @include shadow;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}

@@ -27,10 +27,7 @@ class GoDialog extends React.Component {
 
   insideBoundingBox(location, step) {
     const box = step.boundingBox;
-    console.log(box);
     let convertedBox = box.map((coord) => this.convertCoordinates(coord[0], coord[1]));
-    console.log(convertedBox);
-    console.log(location);
     return insidePolygon(location, convertedBox);
   }
 
@@ -40,7 +37,6 @@ class GoDialog extends React.Component {
       navigator.geolocation.getCurrentPosition(function(position){
         let cur = [position.coords.longitude, position.coords.latitude];
         if (this.insideBoundingBox(cur, this.props.step)) {
-          console.log(position)
           fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
         }
         else {

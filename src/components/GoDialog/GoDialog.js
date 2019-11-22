@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './GoDialog.scss';
 import fadeOut from '../../index';
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/Button';
+import Loader from '../../components/Loader/Loader'
 import Modal from '../Modal/Modal';
-import { isEqual } from 'geolocation-utils'
+import { isEqual } from 'geolocation-utils';
+
 
 class GoDialog extends React.Component {
   constructor(props) {
@@ -14,26 +16,22 @@ class GoDialog extends React.Component {
     
     this.state = {
       modalOpen: false,
+      loaderShow: false,
 
     }
-    console.log(navigator.geolocation)
   }
 
-  getLocation() {
-    navigator.geolocation.getCurrentPosition(function(position){
-        return [position.coords.longitude, position.coords.latitude];
-    });
-  }
 
   onButtonClick(e) {
-    
     const desired = {longitude: this.props.step.longitude, latitude: this.props.step.latitude};
+    this.setState({loaderShow: true});
     navigator.geolocation.getCurrentPosition(function(position){
       let cur = [position.coords.longitude, position.coords.latitude];
       if (isEqual(desired, cur, this.props.step.epsilon)) {
         fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
       }
       else {
+        this.setState({loaderShow: false});
         this.setState({modalOpen: true});
       }
     }.bind(this));
@@ -51,6 +49,10 @@ class GoDialog extends React.Component {
         <div>You haven't arrived at the right location yet. If you don't know where you're going, check out the <a target="_blank" href="https://www.northeastern.edu/campusmap/printable/campusmap.pdf">campus map</a></div>
       </Modal>
     }
+    let renderedLoader = null;
+    if (this.state.loaderShow) {
+      renderedLoader = <Loader />;
+    }
     return (
     <div className="go-dialog">
       <div className="content-container">
@@ -60,8 +62,8 @@ class GoDialog extends React.Component {
         <Button text="I've Arrived" onClick={this.onButtonClick} />
       </div>
       {modal}
+      {renderedLoader}
     </div>
-
     );
   }
 };

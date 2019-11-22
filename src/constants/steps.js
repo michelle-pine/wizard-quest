@@ -5,7 +5,7 @@ export const SAMPLE_COORDS = [
   [42.327892, -71.104737],
 ];
 
-export const STEPS = {
+export let STEPS = {
   0: {
     type: "none",
   },
@@ -38,7 +38,7 @@ export const STEPS = {
       [42.337921, -71.088206],
     ],
     //boundingBox: SAMPLE_COORDS,
-    description: "Find the spellbook. Go where curious minds can find find books to read.",
+    description: "Find the spellbook. Go where curious minds find books to read.",
   },
   4: {
     type: "audio",
@@ -48,6 +48,15 @@ export const STEPS = {
   },
   5: {
     type: "spellbook",
+    hiddenDesc: "At this step, the user can read the spellbook.",
   }
 }
 
+
+export let GOOD_STEPS = {
+
+}
+
+export let BAD_STEPS = {
+
+}

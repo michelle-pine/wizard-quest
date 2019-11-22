@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/wizard-quest/static/css/main.705d8713.chunk.css",
+    "main.js": "/wizard-quest/static/js/main.5af9e60c.chunk.js",
+    "main.js.map": "/wizard-quest/static/js/main.5af9e60c.chunk.js.map",
+    "runtime-main.js": "/wizard-quest/static/js/runtime-main.46e24a3a.js",
+    "runtime-main.js.map": "/wizard-quest/static/js/runtime-main.46e24a3a.js.map",
+    "static/js/2.e1fa10a1.chunk.js": "/wizard-quest/static/js/2.e1fa10a1.chunk.js",
+    "static/js/2.e1fa10a1.chunk.js.map": "/wizard-quest/static/js/2.e1fa10a1.chunk.js.map",
+    "index.html": "/wizard-quest/index.html",
+    "precache-manifest.156b89e59f53b7e3e6c1d463d29b0c3c.js": "/wizard-quest/precache-manifest.156b89e59f53b7e3e6c1d463d29b0c3c.js",
+    "service-worker.js": "/wizard-quest/service-worker.js",
+    "static/css/main.705d8713.chunk.css.map": "/wizard-quest/static/css/main.705d8713.chunk.css.map",
+    "static/media/loader.svg": "/wizard-quest/static/media/loader.623fde5f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46e24a3a.js",
+    "static/js/2.e1fa10a1.chunk.js",
+    "static/css/main.705d8713.chunk.css",
+    "static/js/main.5af9e60c.chunk.js"
+  ]
+}

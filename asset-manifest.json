@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/wizard-quest/static/css/main.705d8713.chunk.css",
-    "main.js": "/wizard-quest/static/js/main.6c251e71.chunk.js",
-    "main.js.map": "/wizard-quest/static/js/main.6c251e71.chunk.js.map",
+    "main.css": "/wizard-quest/static/css/main.34126ee8.chunk.css",
+    "main.js": "/wizard-quest/static/js/main.26a31816.chunk.js",
+    "main.js.map": "/wizard-quest/static/js/main.26a31816.chunk.js.map",
     "runtime-main.js": "/wizard-quest/static/js/runtime-main.46e24a3a.js",
     "runtime-main.js.map": "/wizard-quest/static/js/runtime-main.46e24a3a.js.map",
-    "static/js/2.f9b6d52f.chunk.js": "/wizard-quest/static/js/2.f9b6d52f.chunk.js",
-    "static/js/2.f9b6d52f.chunk.js.map": "/wizard-quest/static/js/2.f9b6d52f.chunk.js.map",
+    "static/js/2.7d1d5cb0.chunk.js": "/wizard-quest/static/js/2.7d1d5cb0.chunk.js",
+    "static/js/2.7d1d5cb0.chunk.js.map": "/wizard-quest/static/js/2.7d1d5cb0.chunk.js.map",
     "index.html": "/wizard-quest/index.html",
-    "precache-manifest.27071e94bdd56adc20f8e9466768ddd2.js": "/wizard-quest/precache-manifest.27071e94bdd56adc20f8e9466768ddd2.js",
+    "precache-manifest.eaf0e0a1cf4b5f1f6122c3525f617743.js": "/wizard-quest/precache-manifest.eaf0e0a1cf4b5f1f6122c3525f617743.js",
     "service-worker.js": "/wizard-quest/service-worker.js",
-    "static/css/main.705d8713.chunk.css.map": "/wizard-quest/static/css/main.705d8713.chunk.css.map",
+    "static/css/main.34126ee8.chunk.css.map": "/wizard-quest/static/css/main.34126ee8.chunk.css.map",
+    "static/media/book-cover.jpg": "/wizard-quest/static/media/book-cover.bc75b5ba.jpg",
+    "static/media/book-texture.jpg": "/wizard-quest/static/media/book-texture.6a22510b.jpg",
     "static/media/loader.svg": "/wizard-quest/static/media/loader.623fde5f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.46e24a3a.js",
-    "static/js/2.f9b6d52f.chunk.js",
-    "static/css/main.705d8713.chunk.css",
-    "static/js/main.6c251e71.chunk.js"
+    "static/js/2.7d1d5cb0.chunk.js",
+    "static/css/main.34126ee8.chunk.css",
+    "static/js/main.26a31816.chunk.js"
   ]
 }

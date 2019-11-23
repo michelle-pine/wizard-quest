@@ -5,6 +5,11 @@ import { Route, HashRouter as Router } from 'react-router-dom'
 import $ from 'jquery'; 
 
 import './index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'font-awesome/css/font-awesome.min.css'
+
+import './index.scss';
 
 //stores
 import store from './store/index'

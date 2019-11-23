@@ -19,16 +19,23 @@ class Step extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidMount() {
+    this.goToStep();
+  }
+
+  goToStep() {
     const id = this.props.match.params.id;
-    if (id !== prevProps.match.params.id) {
-      store.dispatch(nextStep({step: parseInt(id)}))
-      console.log(store.getState().currentStep)
-      const state =  store.getState();
-      this.setState({
-        id: parseInt(id),
-        step: state.steps[parseInt(id)],
-      });
+    store.dispatch(nextStep({step: parseInt(id)}))
+    console.log(store.getState().currentStep)
+    const state =  store.getState();
+    this.setState({
+      id: parseInt(id),
+      step: state.steps[parseInt(id)],
+    });
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.goToStep();
     }
   }
 

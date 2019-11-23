@@ -38,13 +38,32 @@
 }
 
 .page-2 {
-  z-index: 8
+  z-index: 8;
 }
 
 .page-3 {
-  z-index: 7
+  z-index: 7;
 }
 
 .book-image.gone {
   left: -100vw;
+}
+
+.potion {
+  color: $black;
+  z-index: 1;
+  overflow: scroll;
+  padding: 15px;
+  padding-bottom: 100px;
+  h4 {
+    color: $black;
+  }
+}
+
+.note {
+  width: 100vw;
+  img {
+    width: 100%;
+  }
+
 }

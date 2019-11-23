@@ -5,10 +5,10 @@ import Book from '../media/book-filler.png';
 import CatAndBook from '../media/catandbook.png';
 
 export const SAMPLE_COORDS = [
-  [42.328172, -71.104920],
-  [42.328143, -71.104711],
-  [42.327913, -71.104949],
-  [42.327892, -71.104737],
+  [42.328207, -71.104922],
+  [42.328152, -71.104704],
+  [42.327905,-71.10495],
+  [42.327894, -71.10474],
 ];
 
 export let STEPS = {

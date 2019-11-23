@@ -5,7 +5,7 @@ import fadeOut from '../../index';
 import Button from '../../components/Button/Button';
 import Loader from '../../components/Loader/Loader'
 import Modal from '../Modal/Modal';
-import { insidePolygon } from 'geolocation-utils';
+import { insidePolygon, insideCircle } from 'geolocation-utils';
 
 
 class GoDialog extends React.Component {
@@ -28,7 +28,7 @@ class GoDialog extends React.Component {
   insideBoundingBox(location, step) {
     const box = step.boundingBox;
     let convertedBox = box.map((coord) => this.convertCoordinates(coord[0], coord[1]));
-    return insidePolygon(location, convertedBox);
+    return insideCircle(location, this.convertCoordinates(step.center[0], step.center[1]), step.radius);
   }
 
   onButtonClick(e) {
@@ -38,8 +38,6 @@ class GoDialog extends React.Component {
         let cur = [position.coords.longitude, position.coords.latitude];
         console.log(cur);
         console.log(this.props.step)
-        console.log(this.insideBoundingBox(cur, this.props.step))
-
         if (this.insideBoundingBox(cur, this.props.step)) {
           fadeOut(this.props, e);
         }

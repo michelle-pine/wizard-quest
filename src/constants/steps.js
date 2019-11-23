@@ -11,6 +11,9 @@ export const SAMPLE_COORDS = [
   [42.327894, -71.10474],
 ];
 
+export const SAMPLE_CENTER = [42.327987, -71.104858]
+export const SAMPLE_RADIUS = 25;
+
 export let STEPS = {
   0: {
     type: "none",
@@ -23,6 +26,10 @@ export let STEPS = {
     //   [42.336825, -71.091075],
     //   [42.337030, -71.089838],
     // ],
+    // center: [42.337147, -71.090267],
+    // radius: 57.3024,
+    radius: SAMPLE_RADIUS, 
+    center: SAMPLE_CENTER,
     boundingBox: SAMPLE_COORDS,
     description: "Go to Centennial Common"
   },
@@ -51,6 +58,10 @@ export let STEPS = {
     //   [42.337921, -71.088206],
     //   [42.337921, -71.088206],
     // ],
+    // center: [42.338400, -71.087921],
+    // radius: 42.672,
+    radius: SAMPLE_RADIUS, 
+    center: SAMPLE_CENTER,
     boundingBox: SAMPLE_COORDS,
     description: "Find the spellbook. Go where curious minds find books to read.",
   },

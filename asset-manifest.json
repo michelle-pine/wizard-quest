@@ -1,24 +1,30 @@
 {
   "files": {
-    "main.css": "/wizard-quest/static/css/main.34126ee8.chunk.css",
-    "main.js": "/wizard-quest/static/js/main.26a31816.chunk.js",
-    "main.js.map": "/wizard-quest/static/js/main.26a31816.chunk.js.map",
+    "main.css": "/wizard-quest/static/css/main.fb671664.chunk.css",
+    "main.js": "/wizard-quest/static/js/main.9dbf28e4.chunk.js",
+    "main.js.map": "/wizard-quest/static/js/main.9dbf28e4.chunk.js.map",
     "runtime-main.js": "/wizard-quest/static/js/runtime-main.46e24a3a.js",
     "runtime-main.js.map": "/wizard-quest/static/js/runtime-main.46e24a3a.js.map",
-    "static/js/2.7d1d5cb0.chunk.js": "/wizard-quest/static/js/2.7d1d5cb0.chunk.js",
-    "static/js/2.7d1d5cb0.chunk.js.map": "/wizard-quest/static/js/2.7d1d5cb0.chunk.js.map",
+    "static/js/2.099056da.chunk.js": "/wizard-quest/static/js/2.099056da.chunk.js",
+    "static/js/2.099056da.chunk.js.map": "/wizard-quest/static/js/2.099056da.chunk.js.map",
     "index.html": "/wizard-quest/index.html",
-    "precache-manifest.eaf0e0a1cf4b5f1f6122c3525f617743.js": "/wizard-quest/precache-manifest.eaf0e0a1cf4b5f1f6122c3525f617743.js",
+    "precache-manifest.b12258a604764303ecc43a8711f0c555.js": "/wizard-quest/precache-manifest.b12258a604764303ecc43a8711f0c555.js",
     "service-worker.js": "/wizard-quest/service-worker.js",
-    "static/css/main.34126ee8.chunk.css.map": "/wizard-quest/static/css/main.34126ee8.chunk.css.map",
+    "static/css/main.fb671664.chunk.css.map": "/wizard-quest/static/css/main.fb671664.chunk.css.map",
     "static/media/book-cover.jpg": "/wizard-quest/static/media/book-cover.bc75b5ba.jpg",
+    "static/media/book-filler.png": "/wizard-quest/static/media/book-filler.9fea8c1d.png",
     "static/media/book-texture.jpg": "/wizard-quest/static/media/book-texture.6a22510b.jpg",
-    "static/media/loader.svg": "/wizard-quest/static/media/loader.623fde5f.svg"
+    "static/media/cat.png": "/wizard-quest/static/media/cat.834bc1be.png",
+    "static/media/catandbook.png": "/wizard-quest/static/media/catandbook.570fbc2b.png",
+    "static/media/evilwizard.png": "/wizard-quest/static/media/evilwizard.f4c15ed3.png",
+    "static/media/loader.svg": "/wizard-quest/static/media/loader.623fde5f.svg",
+    "static/media/neutralwizard.png": "/wizard-quest/static/media/neutralwizard.592b3e33.png",
+    "static/media/Spellbook.scss": "/wizard-quest/static/media/star.85b5773e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.46e24a3a.js",
-    "static/js/2.7d1d5cb0.chunk.js",
-    "static/css/main.34126ee8.chunk.css",
-    "static/js/main.26a31816.chunk.js"
+    "static/js/2.099056da.chunk.js",
+    "static/css/main.fb671664.chunk.css",
+    "static/js/main.9dbf28e4.chunk.js"
   ]
 }

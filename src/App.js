@@ -16,7 +16,7 @@ class App extends React.Component {
   
 
   onButtonClick(e) {
-    fadeOut(this.props, e, "step/1");
+    fadeOut(this.props, e);
   }
   
   render() {

@@ -6,6 +6,7 @@ import AudioDialog from '../../components/AudioDialog/AudioDialog'
 import Spellbook from '../../components/Spellbook/Spellbook'
 
 import store from '../../store/index'
+import { nextStep } from "../../actions/index";
 
 
 class Step extends React.Component {
@@ -19,15 +20,15 @@ class Step extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const state =  store.getState();
-    if (this.props.match.params.id !== prevProps.match.params.id) {
+    const id = this.props.match.params.id;
+    if (id !== prevProps.match.params.id) {
+      store.dispatch(nextStep({step: parseInt(id)}))
+      console.log(store.getState().currentStep)
+      const state =  store.getState();
       this.setState({
-        id: state.currentStep,
-        step: state.steps[state.currentStep],
+        id: parseInt(id),
+        step: state.steps[parseInt(id)],
       });
-      if (state.currentStep !== this.props.match.params.id) {
-        this.props.history.push(`/step/${state.currentStep}`);
-      }
     }
   }
 

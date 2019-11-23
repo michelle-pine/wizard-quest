@@ -19,7 +19,7 @@ function rootReducer(state = getInitialState(), action) {
   switch (action.type) {
     case NEXT_STEP:
       return Object.assign({}, state, {
-        currentStep: state.currentStep + 1,
+        currentStep: action.payload.step || state.currentStep + 1,
         steps: state.steps
       });
     case ADD_STEPS: 

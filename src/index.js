@@ -37,7 +37,6 @@ const fadeOut = function(props, e) {
   element.classList.remove('fade-in');
   element.classList.add('fade-out');
   store.dispatch(nextStep({}));
-  console.log(store.getState().currentStep);
   const { history: { push } } = props;
   setTimeout(()=>push(`/step/${store.getState().currentStep}`), 490);
 }

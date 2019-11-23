@@ -13,12 +13,30 @@ class GoDialog extends React.Component {
     super(props);
     this.onButtonClick = this.onButtonClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-    
+    this.setLocation = this.setLocation.bind(this);
     this.state = {
       modalOpen: false,
       loaderShow: false,
+      location: null,
 
     }
+  }
+
+  componentDidMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(this.setLocation, function(error) {
+        this.setState({loaderShow: false});
+        alert("You don't have geolocation services enabled. Enable them before continuing.")
+      }.bind(this));
+    } else {
+      this.setState({loaderShow: false});
+      alert("You don't have geolocation services enabled. Enable them before continuing.");
+    }
+  }
+
+  setLocation(position) {
+    console.log(position)
+    this.setState({location: position.coords});
   }
 
   convertCoordinates(lat, long) {
@@ -31,29 +49,20 @@ class GoDialog extends React.Component {
 
   onButtonClick(e) {
     this.setState({loaderShow: true});
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position){
-        let cur = [position.coords.longitude, position.coords.latitude];
-        console.log(cur);
-        console.log(this.props.step)
-        if (this.insideRadius(cur, this.props.step)) {
-          fadeOut(this.props, e);
-        }
-        else {
-          this.setState({loaderShow: false});
-          this.setState({modalOpen: true});
-        }
-      }.bind(this),
-      function(error) {
+    if (this.state.location) {
+      let cur = [this.state.location.longitude, this.state.location.latitude];
+      if (this.insideRadius(cur, this.props.step)) {
+        fadeOut(this.props, e);
+      }
+      else {
         this.setState({loaderShow: false});
-        alert("You don't have geolocation services enabled. Enable them before continuing.")
-      }.bind(this));
+        this.setState({modalOpen: true});
+      }
     }
     else {
       this.setState({loaderShow: false});
       alert("You don't have geolocation services enabled. Enable them before continuing.")
     }
-
   }
 
   onModalClose(e) {

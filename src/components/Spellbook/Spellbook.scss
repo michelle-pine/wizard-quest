@@ -15,6 +15,7 @@
   left: 0;
   @include transition;
   top: 0;
+  background: black;
   display: flex;
   align-content: center;
   width: 100vw;
@@ -61,6 +62,7 @@
 
 .note {
   width: 100vw;
+  overflow: scroll;
   img {
     width: 100%;
   }

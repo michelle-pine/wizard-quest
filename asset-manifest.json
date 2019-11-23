@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/wizard-quest/static/css/main.1bc47295.chunk.css",
-    "main.js": "/wizard-quest/static/js/main.de71e77e.chunk.js",
-    "main.js.map": "/wizard-quest/static/js/main.de71e77e.chunk.js.map",
+    "main.css": "/wizard-quest/static/css/main.e5ccaa8a.chunk.css",
+    "main.js": "/wizard-quest/static/js/main.97f9560f.chunk.js",
+    "main.js.map": "/wizard-quest/static/js/main.97f9560f.chunk.js.map",
     "runtime-main.js": "/wizard-quest/static/js/runtime-main.46e24a3a.js",
     "runtime-main.js.map": "/wizard-quest/static/js/runtime-main.46e24a3a.js.map",
     "static/css/2.0a8258bb.chunk.css": "/wizard-quest/static/css/2.0a8258bb.chunk.css",
-    "static/js/2.d8e2db85.chunk.js": "/wizard-quest/static/js/2.d8e2db85.chunk.js",
-    "static/js/2.d8e2db85.chunk.js.map": "/wizard-quest/static/js/2.d8e2db85.chunk.js.map",
+    "static/js/2.77e8d39a.chunk.js": "/wizard-quest/static/js/2.77e8d39a.chunk.js",
+    "static/js/2.77e8d39a.chunk.js.map": "/wizard-quest/static/js/2.77e8d39a.chunk.js.map",
     "index.html": "/wizard-quest/index.html",
-    "precache-manifest.79ced2af5c4be39e7e1f44410f538933.js": "/wizard-quest/precache-manifest.79ced2af5c4be39e7e1f44410f538933.js",
+    "precache-manifest.5c39699d767c8c1c89014bae5691f501.js": "/wizard-quest/precache-manifest.5c39699d767c8c1c89014bae5691f501.js",
     "service-worker.js": "/wizard-quest/service-worker.js",
     "static/css/2.0a8258bb.chunk.css.map": "/wizard-quest/static/css/2.0a8258bb.chunk.css.map",
-    "static/css/main.1bc47295.chunk.css.map": "/wizard-quest/static/css/main.1bc47295.chunk.css.map",
+    "static/css/main.e5ccaa8a.chunk.css.map": "/wizard-quest/static/css/main.e5ccaa8a.chunk.css.map",
     "static/media/book-cover.jpg": "/wizard-quest/static/media/book-cover.bc75b5ba.jpg",
     "static/media/book-filler.png": "/wizard-quest/static/media/book-filler.9fea8c1d.png",
     "static/media/book-texture.jpg": "/wizard-quest/static/media/book-texture.6a22510b.jpg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.46e24a3a.js",
     "static/css/2.0a8258bb.chunk.css",
-    "static/js/2.d8e2db85.chunk.js",
-    "static/css/main.1bc47295.chunk.css",
-    "static/js/main.de71e77e.chunk.js"
+    "static/js/2.77e8d39a.chunk.js",
+    "static/css/main.e5ccaa8a.chunk.css",
+    "static/js/main.97f9560f.chunk.js"
   ]
 }

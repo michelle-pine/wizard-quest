@@ -19,7 +19,7 @@ class Spellbook extends React.Component {
   onButtonClick(e) {
     e.preventDefault();
     if (this.state.page === 3) {
-      fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
+      fadeOut(this.props, e);
     }
     else {
       this.setState({page: this.state.page + 1});

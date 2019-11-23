@@ -12,7 +12,7 @@ class AudioDialog extends React.Component {
   }
 
   onButtonClick(e) {
-    fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
+    fadeOut(this.props, e);
   }
 
   render() {

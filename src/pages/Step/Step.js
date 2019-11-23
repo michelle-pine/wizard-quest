@@ -5,23 +5,29 @@ import GoDialog from '../../components/GoDialog/GoDialog'
 import AudioDialog from '../../components/AudioDialog/AudioDialog'
 import Spellbook from '../../components/Spellbook/Spellbook'
 
-import { STEPS } from '../../constants/steps'
+import store from '../../store/index'
+
 
 class Step extends React.Component {
   constructor(props) {
     super(props);
+    const state =  store.getState();
     this.state = {
-      id: parseInt(props.match.params.id),
-      step: STEPS[props.match.params.id]
+      id: state.currentStep,
+      step: state.steps[state.currentStep],
     };
   }
 
   componentDidUpdate(prevProps) {
+    const state =  store.getState();
     if (this.props.match.params.id !== prevProps.match.params.id) {
       this.setState({
-        id: parseInt(this.props.match.params.id),
-        step: STEPS[this.props.match.params.id]
+        id: state.currentStep,
+        step: state.steps[state.currentStep],
       });
+      if (state.currentStep !== this.props.match.params.id) {
+        this.props.history.push(`/step/${state.currentStep}`);
+      }
     }
   }
 

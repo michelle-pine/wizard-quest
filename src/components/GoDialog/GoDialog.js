@@ -37,7 +37,7 @@ class GoDialog extends React.Component {
       navigator.geolocation.getCurrentPosition(function(position){
         let cur = [position.coords.longitude, position.coords.latitude];
         if (this.insideBoundingBox(cur, this.props.step)) {
-          fadeOut(this.props, e, `/step/${this.props.stepNum + 1}`);
+          fadeOut(this.props, e);
         }
         else {
           this.setState({loaderShow: false});

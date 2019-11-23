@@ -8,6 +8,7 @@ import './index.scss';
 
 //stores
 import store from './store/index'
+import { nextStep } from "./actions/index";
 
 import App from './App';
 import Step from './pages/Step/Step';
@@ -30,13 +31,15 @@ const routing = (
   </Provider>
 );
 
-const fadeOut = function(props, e, location) {
+const fadeOut = function(props, e) {
   e.preventDefault();
   let element = document.getElementById("content-wrapper");
   element.classList.remove('fade-in');
   element.classList.add('fade-out');
+  store.dispatch(nextStep({}));
+  console.log(store.getState().currentStep);
   const { history: { push } } = props;
-  setTimeout(()=>push(location), 490);
+  setTimeout(()=>push(`/step/${store.getState().currentStep}`), 490);
 }
 
 export default fadeOut;

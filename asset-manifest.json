@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/wizard-quest/static/css/main.fb671664.chunk.css",
-    "main.js": "/wizard-quest/static/js/main.9dbf28e4.chunk.js",
-    "main.js.map": "/wizard-quest/static/js/main.9dbf28e4.chunk.js.map",
+    "main.css": "/wizard-quest/static/css/main.808ee4f1.chunk.css",
+    "main.js": "/wizard-quest/static/js/main.ed7ad564.chunk.js",
+    "main.js.map": "/wizard-quest/static/js/main.ed7ad564.chunk.js.map",
     "runtime-main.js": "/wizard-quest/static/js/runtime-main.46e24a3a.js",
     "runtime-main.js.map": "/wizard-quest/static/js/runtime-main.46e24a3a.js.map",
-    "static/js/2.099056da.chunk.js": "/wizard-quest/static/js/2.099056da.chunk.js",
-    "static/js/2.099056da.chunk.js.map": "/wizard-quest/static/js/2.099056da.chunk.js.map",
+    "static/js/2.8bab0d74.chunk.js": "/wizard-quest/static/js/2.8bab0d74.chunk.js",
+    "static/js/2.8bab0d74.chunk.js.map": "/wizard-quest/static/js/2.8bab0d74.chunk.js.map",
     "index.html": "/wizard-quest/index.html",
-    "precache-manifest.b12258a604764303ecc43a8711f0c555.js": "/wizard-quest/precache-manifest.b12258a604764303ecc43a8711f0c555.js",
+    "precache-manifest.e16537e5e6c4d162e858133ebfa89e31.js": "/wizard-quest/precache-manifest.e16537e5e6c4d162e858133ebfa89e31.js",
     "service-worker.js": "/wizard-quest/service-worker.js",
-    "static/css/main.fb671664.chunk.css.map": "/wizard-quest/static/css/main.fb671664.chunk.css.map",
+    "static/css/main.808ee4f1.chunk.css.map": "/wizard-quest/static/css/main.808ee4f1.chunk.css.map",
     "static/media/book-cover.jpg": "/wizard-quest/static/media/book-cover.bc75b5ba.jpg",
     "static/media/book-filler.png": "/wizard-quest/static/media/book-filler.9fea8c1d.png",
     "static/media/book-texture.jpg": "/wizard-quest/static/media/book-texture.6a22510b.jpg",
@@ -23,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.46e24a3a.js",
-    "static/js/2.099056da.chunk.js",
-    "static/css/main.fb671664.chunk.css",
-    "static/js/main.9dbf28e4.chunk.js"
+    "static/js/2.8bab0d74.chunk.js",
+    "static/css/main.808ee4f1.chunk.css",
+    "static/js/main.ed7ad564.chunk.js"
   ]
 }

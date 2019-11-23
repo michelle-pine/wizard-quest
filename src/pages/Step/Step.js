@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Step.scss';
-import GoDialog from '../../components/GoDialog/GoDialog'
-import AudioDialog from '../../components/AudioDialog/AudioDialog'
-import Spellbook from '../../components/Spellbook/Spellbook'
+import GoDialog from '../../components/GoDialog/GoDialog';
+import AudioDialog from '../../components/AudioDialog/AudioDialog';
+import ChoiceDialog from '../../components/ChoiceDialog/ChoiceDialog'
+
+import Spellbook from '../../components/Spellbook/Spellbook';
 
 import store from '../../store/index'
 import { nextStep } from "../../actions/index";
@@ -48,6 +50,8 @@ class Step extends React.Component {
       return <AudioDialog history={this.props.history} step={this.state.step} stepNum={this.state.id} />;
     } else if (this.state.step.type === "spellbook") {
       return <Spellbook history={this.props.history} step={this.state.step} stepNum={this.state.id} />
+    } else if (this.state.step.type === "choice") {
+      return <ChoiceDialog history={this.props.history} step={this.state.step} stepNum={this.state.id} />
     }
   }
 

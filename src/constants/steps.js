@@ -3,6 +3,11 @@ import EvilWizard from '../media/evilwizard.png';
 import Wizard from '../media/neutralwizard.png';
 import Book from '../media/book-filler.png';
 import CatAndBook from '../media/catandbook.png';
+import CatAndBookAndExam from '../media/catandbookandexam.png';
+import fadeOut from '../index'
+
+import store from '../store/index'
+import { addSteps } from "../actions/index";
 
 export const SAMPLE_COORDS = [
   [42.328207, -71.104922],
@@ -82,14 +87,103 @@ export let STEPS = {
     button: "Next",
     hiddenDesc: "At this step, the cat explains the truth.",
     audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+  },
+  8: {
+    type: "choice",
+    hiddenDesc: "At this step, the user chooses a major outcome of the game.",
+    choices: [
+      {
+        id: 1,
+        buttonText: "Betray the Wizard",
+        buttonFunc: function(e, props) {
+          e.preventDefault();
+          store.dispatch(addSteps(GOOD_STEPS));
+          fadeOut(props, e);
+        },
+      },
+      {
+        id: 2,
+        buttonText: "Betray the Cat",
+        buttonFunc: function(e, props) {
+          e.preventDefault();
+          store.dispatch(addSteps(BAD_STEPS));
+          fadeOut(props, e);
+        },
+      }
+    ]
   }
 }
 
 
 export let GOOD_STEPS = {
+  9: {
+    type: "audio",
+    img: CatAndBook,
+    button: "Next",
+    hiddenDesc: "At this step, the cat explains how to defeat the wizard.",
+    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+  },
+  10: {
+    type: "go-dialog",
+    // boundingBox: [
+    //   [42.337338,-71.090977],
+    //   [42.337559, -71.089741],
+    //   [42.336825, -71.091075],
+    //   [42.337030, -71.089838],
+    // ],
+    // center: [42.337599, -71.090301],
+    // radius: 28.53,
+    radius: SAMPLE_RADIUS, 
+    center: SAMPLE_CENTER,
+    boundingBox: SAMPLE_COORDS,
+    description: "Go to Shillman Hall"
+  },
+  11: {
+    type: "audio",
+    img: CatAndBookAndExam,
+    button: "Next",
+    hiddenDesc: "At this step, the user will find the exam.",
+    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+  },
+  12: {
+    type: "go-dialog",
+    // boundingBox: [
+    //   [42.337338,-71.090977],
+    //   [42.337559, -71.089741],
+    //   [42.336825, -71.091075],
+    //   [42.337030, -71.089838],
+    // ],
+    // center: [42.337147, -71.090267],
+    // radius: 57.3024,
+    radius: SAMPLE_RADIUS, 
+    center: SAMPLE_CENTER,
+    boundingBox: SAMPLE_COORDS,
+    description: "Go to Centennial Common to reconvene with the Wizard."
+  },
 
 }
 
 export let BAD_STEPS = {
-
+  9: {
+    type: "audio",
+    img: CatAndBook,
+    button: "Next",
+    hiddenDesc: "At this step, the user betrays the cat and catnaps them!",
+    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+  },
+  10: {
+    type: "go-dialog",
+    // boundingBox: [
+    //   [42.337338,-71.090977],
+    //   [42.337559, -71.089741],
+    //   [42.336825, -71.091075],
+    //   [42.337030, -71.089838],
+    // ],
+    // center: [42.337147, -71.090267],
+    // radius: 57.3024,
+    radius: SAMPLE_RADIUS, 
+    center: SAMPLE_CENTER,
+    boundingBox: SAMPLE_COORDS,
+    description: "Go to Centennial Common to reconvene with the Wizard."
+  },
 }

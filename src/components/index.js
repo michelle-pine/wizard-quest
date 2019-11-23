@@ -1,4 +1,5 @@
 /* PLOP_INJECT_IMPORT */
+import ChoiceDialog from './ChoiceDialog';
 import Spellbook from './Spellbook';
 import Loader from './Loader';
 import AudioDialog from './AudioDialog';
@@ -8,6 +9,7 @@ import Button from './Button';
 
 export {
   /* PLOP_INJECT_EXPORT */
+	ChoiceDialog,
 	Spellbook,
 	Loader,
 	AudioDialog,

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { Route, HashRouter as Router } from 'react-router-dom'
+import $ from 'jquery'; 
 
 import './index.scss';
 
@@ -18,6 +19,9 @@ const routing = (
     <div className="page-wrapper">
       <Router basename='/'>
         <div>
+          <div id="starshine">
+              <div className="template shine"></div>
+          </div>
           <Route exact path="/" component={App} />
           <Route path="/step/:id" component={Step} />
         </div>
@@ -43,3 +47,33 @@ ReactDOM.render(routing, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+$(function() {
+  var body = $('#starshine'),
+      template = $('.template.shine'),
+      stars =  500,
+      sparkle = 20;
+  
+    
+  var size = 'small';
+  var createStar = function() {
+    template.clone().removeAttr('id').css({
+      top: (Math.random() * 100) + '%',
+      left: (Math.random() * 100) + '%',
+      webkitAnimationDelay: (Math.random() * sparkle) + 's',
+      mozAnimationDelay: (Math.random() * sparkle) + 's'
+    }).addClass(size).appendTo(body);
+  };
+ 
+  for(var i = 0; i < stars; i++) {
+    if(i % 2 === 0) {
+      size = 'small';
+    } else if(i % 3 === 0) {
+      size = 'medium';
+    } else {
+      size = 'large';
+    }
+    
+    createStar();
+  }
+});

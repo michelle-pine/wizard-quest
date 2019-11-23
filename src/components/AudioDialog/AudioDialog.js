@@ -21,7 +21,7 @@ class AudioDialog extends React.Component {
       <div className="content-container audio-container">
         <ReactAudioPlayer
           src={this.props.step.audioSrc}
-          autoPlay
+          // autoPlay
           controls
         />
       </div>

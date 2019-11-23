@@ -25,9 +25,7 @@ class GoDialog extends React.Component {
     return [long, lat];
   }
 
-  insideBoundingBox(location, step) {
-    const box = step.boundingBox;
-    let convertedBox = box.map((coord) => this.convertCoordinates(coord[0], coord[1]));
+  insideRadius(location, step) {
     return insideCircle(location, this.convertCoordinates(step.center[0], step.center[1]), step.radius);
   }
 
@@ -38,7 +36,7 @@ class GoDialog extends React.Component {
         let cur = [position.coords.longitude, position.coords.latitude];
         console.log(cur);
         console.log(this.props.step)
-        if (this.insideBoundingBox(cur, this.props.step)) {
+        if (this.insideRadius(cur, this.props.step)) {
           fadeOut(this.props, e);
         }
         else {
@@ -75,7 +73,7 @@ class GoDialog extends React.Component {
       renderedLoader = <Loader />;
     }
     return (
-    <div className="go-dialog">
+    <div className="go-dialog fade-in">
       <div className="content-container">
         {this.props.step.description}
       </div>

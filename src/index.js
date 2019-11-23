@@ -38,12 +38,11 @@ const routing = (
 
 const fadeOut = function(props, e) {
   e.preventDefault();
-  let element = document.getElementById("content-wrapper");
-  element.classList.remove('fade-in');
-  element.classList.add('fade-out');
+  $("#content-wrapper").css("opacity", "0");
   store.dispatch(nextStep({}));
   const { history: { push } } = props;
   setTimeout(()=>push(`/step/${store.getState().currentStep}`), 490);
+  $("#content-wrapper").css("opacity", "1");
 }
 
 export default fadeOut;

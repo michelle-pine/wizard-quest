@@ -17,7 +17,7 @@ class AudioDialog extends React.Component {
 
   render() {
     return (
-    <div className="audio-dialog">
+    <div className="audio-dialog fade-in">
       <div className="content-container audio-container">
         <ReactAudioPlayer
           src={this.props.step.audioSrc}
@@ -26,7 +26,7 @@ class AudioDialog extends React.Component {
         />
       </div>
       <div className="img-wrapper">
-        <img src={this.props.step.img} alt="" />
+        <img className="fade-in" src={this.props.step.img} alt="" />
       </div>
       <div className="button-wrapper">
         <Button text={this.props.step.button} onClick={this.onButtonClick} />

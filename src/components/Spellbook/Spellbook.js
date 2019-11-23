@@ -58,7 +58,7 @@ class Spellbook extends React.Component {
     let page1gone = this.state.page > 1 ? "gone" : "";
     let page2gone = this.state.page > 2 ? "gone" : "";
     return (
-    <div className="spellbook">
+    <div className="spellbook fade-in">
       <div className="button-wrapper fixed-button">
         {this.renderPrevButton()}
         {this.renderNextButton()}

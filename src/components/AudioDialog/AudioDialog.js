@@ -25,6 +25,9 @@ class AudioDialog extends React.Component {
           controls
         />
       </div>
+      <div className="img-wrapper">
+        <img src={this.props.step.img} alt="" />
+      </div>
       <div className="button-wrapper">
         <Button text={this.props.step.button} onClick={this.onButtonClick} />
       </div>

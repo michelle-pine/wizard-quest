@@ -1,1 +1,12 @@
 @import '../../index.scss';
+
+.img-wrapper {
+  padding-top: 20px;
+  max-height: 56vh;
+  display: flex;
+  justify-content: center;
+  img {
+    max-height: 56vh;
+    
+  }
+}

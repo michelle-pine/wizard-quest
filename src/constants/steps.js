@@ -7,7 +7,7 @@ import CatAndBookAndExam from '../media/catandbookandexam.png';
 import fadeOut from '../index'
 
 import store from '../store/index'
-import { addSteps } from "../actions/index";
+import { addSteps, doubleTraitor } from "../actions/index";
 
 export const SAMPLE_COORDS = [
   [42.328207, -71.104922],
@@ -160,6 +160,77 @@ export let GOOD_STEPS = {
     // boundingBox: SAMPLE_COORDS,
     description: "Go to Centennial Common to reconvene with the Wizard."
   },
+  13: {
+    img: Wizard,
+    type: "audio-event",
+    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3",
+    events: [
+      {
+        startTime: 10, 
+        buttonText: "Hand Over Cat and Spellbook", 
+        endTime: 20,
+        traitorTimeline: false,
+        buttonFunc: function(e) {
+          this.setState({giveItems: true})
+        },
+      },
+      {
+        startTime: 20, 
+        buttonText: "Betray Wizard and Cat", 
+        description: "If you proceed down this path, you may steal the wizard's magic for yourself.",
+        endTime: 30,
+        traitorTimeline: false,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          store.dispatch(doubleTraitor());
+        },
+      },
+      {
+        startTime: 20,
+        buttonText: "Add Exam to Potion",
+        description: "Ruin the wizard's magic spell by adding the failed exam!",
+        endTime: 30,
+        traitorTimeline: false,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({examAdded: true});
+        },
+      },
+      {
+        startTime: 30, 
+        buttonText: "Throw Cat Into Cauldron", 
+        description: "Take the Cat's magic for yourself!",
+        endTime: 40,
+        traitorTimeline: true,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({catThrown: true});
+        },
+      },
+      {
+        startTime: 40, 
+        buttonText: "Steal the Wizard’s Magic!",
+        description: "Drink from the cauldron and complete the spell!", 
+        endTime: 50,
+        traitorTimeline: true,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({magicStolen: true});
+        },
+      },
+      {
+        startTime: 60, 
+        buttonText: "Turn the Wizard into a Pigeon", 
+        description: "This way, he can't bother you anymore.",
+        endTime: 70,
+        traitorTimeline: true,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({pigeon: true});
+        },
+      },
+    ]
+  }
 
 }
 
@@ -186,4 +257,64 @@ export let BAD_STEPS = {
     // boundingBox: SAMPLE_COORDS,
     description: "Go to Centennial Common to reconvene with the Wizard."
   },
+  11: {
+    type: "audio-event",
+    img: Wizard,
+    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3",
+    events: [
+      {
+        startTime: 10, 
+        buttonText: "Hand Over Cat and Spellbook", 
+        endTime: 20,
+        traitorTimeline: false,
+        buttonFunc: function(e) {
+          this.setState({giveItems: true})
+        },
+      },
+      {
+        startTime: 20, 
+        buttonText: "Betray Wizard and Cat", 
+        description: "If you proceed down this path, you may steal the wizard's magic for yourself.",
+        endTime: 30,
+        traitorTimeline: false,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          store.dispatch(doubleTraitor());
+        },
+      },
+      {
+        startTime: 30, 
+        buttonText: "Throw Cat Into Cauldron", 
+        description: "Take the Cat's magic for yourself!",
+        endTime: 40,
+        traitorTimeline: true,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({catThrown: true});
+        },
+      },
+      {
+        startTime: 40, 
+        buttonText: "Steal the Wizard’s Magic!",
+        description: "Drink from the cauldron and complete the spell!", 
+        endTime: 50,
+        traitorTimeline: true,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({magicStolen: true});
+        },
+      },
+      {
+        startTime: 60, 
+        buttonText: "Turn the Wizard into a Pigeon", 
+        description: "This way, he can't bother you anymore.",
+        endTime: 70,
+        traitorTimeline: true,
+        buttonFunc: function(e) {
+          e.preventDefault();
+          this.setState({pigeon: true});
+        },
+      },
+    ]
+  }
 }

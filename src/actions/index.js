@@ -1,6 +1,7 @@
 import {
   NEXT_STEP,
   ADD_STEPS,
+  DOUBLE_TRAITOR
 } from "../constants/action-types";
 
 export function nextStep(payload) {
@@ -9,4 +10,8 @@ export function nextStep(payload) {
 
 export function addSteps(payload) {
   return { type: ADD_STEPS, payload };
+}
+
+export function doubleTraitor(payload) {
+  return { type: DOUBLE_TRAITOR, payload };
 }

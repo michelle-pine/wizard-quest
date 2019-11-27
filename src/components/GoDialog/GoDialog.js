@@ -51,7 +51,7 @@ class GoDialog extends React.Component {
     this.setState({loaderShow: true});
     if (this.state.location) {
       let cur = [this.state.location.longitude, this.state.location.latitude];
-      if (this.insideRadius(cur, this.props.step)) {
+      if (true || this.insideRadius(cur, this.props.step)) {
         fadeOut(this.props, e);
       }
       else {

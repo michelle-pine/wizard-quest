@@ -1,0 +1,39 @@
+@import '../../index.scss';
+
+
+.audio-event-dialog {
+  .audio-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+  }
+  .fixed-button-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    .fixed-button-individual {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      .quest-button {
+        margin-top: 10px;
+      }
+
+      p {
+        background: rgba(5, 0, 33, 0.75);
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1em;
+        border-radius: 5px;
+      }
+      
+    }
+  }
+}

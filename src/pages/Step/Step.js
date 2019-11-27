@@ -9,6 +9,7 @@ import Spellbook from '../../components/Spellbook/Spellbook';
 
 import store from '../../store/index'
 import { nextStep } from "../../actions/index";
+import AudioEventDialog from '../../components/AudioEventDialog/AudioEventDialog';
 
 
 class Step extends React.Component {
@@ -52,6 +53,8 @@ class Step extends React.Component {
       return <Spellbook history={this.props.history} step={this.state.step} stepNum={this.state.id} />
     } else if (this.state.step.type === "choice") {
       return <ChoiceDialog history={this.props.history} step={this.state.step} stepNum={this.state.id} />
+    } else if (this.state.step.type === "audio-event") {
+      return <AudioEventDialog history={this.props.history} step={this.state.step} stepNum={this.state.id} />
     }
   }
 

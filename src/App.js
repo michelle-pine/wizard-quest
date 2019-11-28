@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import Button from './components/Button/Button'
 import fadeOut from './index';
-
+import { cookieUtils } from "./utils/cookie_utils";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(function(position){
       return [position.coords.longitude, position.coords.latitude];
     });
-      
+    cookieUtils.deleteUserCookieData();
   }
   
 

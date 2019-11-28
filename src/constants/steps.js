@@ -3,6 +3,7 @@ import EvilWizard from '../media/evilwizard.png';
 import Wizard from '../media/neutralwizard.png';
 import Book from '../media/book-filler.png';
 import CatAndBook from '../media/catandbook.png';
+import AngryCat from '../media/angrycat.png';
 import CatAndBookAndExam from '../media/catandbookandexam.png';
 import fadeOut from '../index'
 
@@ -25,57 +26,54 @@ export let STEPS = {
   },
   1: {
     type: "go-dialog",
-    // boundingBox: [
-    //   [42.337338,-71.090977],
-    //   [42.337559, -71.089741],
-    //   [42.336825, -71.091075],
-    //   [42.337030, -71.089838],
-    // ],
     center: [42.337147, -71.090267],
     radius: 57.3024,
-    // radius: SAMPLE_RADIUS, 
-    // center: SAMPLE_CENTER,
-    // boundingBox: SAMPLE_COORDS,
     description: "Go to Centennial Common"
   },
   2: {
     type: "audio",
     button: "Next",
-    img: Wizard,
+    imgs: [
+      {
+        src: Wizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
     hiddenDesc: "At this step, the user will hear the wizard talk about the last materials he needs.",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+    audioSrc: "https://docs.google.com/uc?export=download&id=1og_uWAz2cbSHS7zgRXkl8ziewuyETgBG"
   },
   3: {
     type: "audio",
     button: "Next",
-    img: Cat,
+    imgs: [
+      {
+        src: Cat,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
     hiddenDesc: "At this step, the user will hear the cat prompt the user to find the truth.",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+    audioSrc: "https://docs.google.com/uc?export=download&id=16XAIFO73LsFuTHHqc_ojVxxFAML2ggBY"
   },
   4: {
     type: "go-dialog",
-    // boundingBox: [
-    //   [42.338614, -71.088452],
-    //   [42.338785, -71.087862],
-    //   [42.338551, -71.087648],
-    //   [42.338599, -71.087487],
-    //   [42.338444, -71.087380],
-    //   [42.337921, -71.088206],
-    //   [42.337921, -71.088206],
-    // ],
     center: [42.338400, -71.087921],
     radius: 42.672,
-    // radius: SAMPLE_RADIUS, 
-    // center: SAMPLE_CENTER,
-    // boundingBox: SAMPLE_COORDS,
     description: "Find the spellbook. Go where curious minds find books to read.",
   },
   5: {
     type: "audio",
     button: "Open Book",
-    img: CatAndBook,
+    imgs: [
+      {
+        src: CatAndBook,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
     hiddenDesc: "At this step, the cat will help the user locate the spellbook.",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+    audioSrc: "https://docs.google.com/uc?export=download&id=1L1Gq1t0dVb6nRIULEDplsOliV9T9uCJd"
   },
   6: {
     type: "spellbook",
@@ -83,10 +81,16 @@ export let STEPS = {
   },
   7: {
     type: "audio",
-    img: CatAndBook,
+    imgs: [
+      {
+        src: CatAndBook,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
     button: "Next",
     hiddenDesc: "At this step, the cat explains the truth.",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+    audioSrc: "https://docs.google.com/uc?export=download&id=1UAgwIEfO8V1vSLqPNpO3b002OlIeegG8"
   },
   8: {
     type: "choice",
@@ -97,7 +101,7 @@ export let STEPS = {
         buttonText: "Betray the Wizard",
         buttonFunc: function(e, props) {
           e.preventDefault();
-          store.dispatch(addSteps(GOOD_STEPS));
+          store.dispatch(addSteps({steps: GOOD_STEPS, type: "GOOD"}));
           fadeOut(props, e);
         },
       },
@@ -106,7 +110,7 @@ export let STEPS = {
         buttonText: "Betray the Cat",
         buttonFunc: function(e, props) {
           e.preventDefault();
-          store.dispatch(addSteps(BAD_STEPS));
+          store.dispatch(addSteps({steps: BAD_STEPS, type: "BAD"}));
           fadeOut(props, e);
         },
       }
@@ -117,204 +121,232 @@ export let STEPS = {
 
 export let GOOD_STEPS = {
   9: {
-    type: "audio",
-    img: CatAndBook,
-    button: "Next",
-    hiddenDesc: "At this step, the cat explains how to defeat the wizard.",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
-  },
-  10: {
     type: "go-dialog",
-    // boundingBox: [
-    //   [42.337338,-71.090977],
-    //   [42.337559, -71.089741],
-    //   [42.336825, -71.091075],
-    //   [42.337030, -71.089838],
-    // ],
     center: [42.337599, -71.090301],
     radius: 28.53,
-    // radius: SAMPLE_RADIUS, 
-    // center: SAMPLE_CENTER,
-    // boundingBox: SAMPLE_COORDS,
     description: "Go to Shillman Hall"
   },
-  11: {
+  10: {
     type: "audio",
-    img: CatAndBookAndExam,
+    imgs: [
+      {
+        src: CatAndBookAndExam,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
     button: "Next",
     hiddenDesc: "At this step, the user will find the exam.",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+    audioSrc: "https://docs.google.com/uc?export=download&id=1WA3qSpNBauK8Avzv_Lgd2NVzeLu0PAGM"
   },
-  12: {
+  11: {
     type: "go-dialog",
-    // boundingBox: [
-    //   [42.337338,-71.090977],
-    //   [42.337559, -71.089741],
-    //   [42.336825, -71.091075],
-    //   [42.337030, -71.089838],
-    // ],
     center: [42.337147, -71.090267],
     radius: 57.3024,
-    // radius: SAMPLE_RADIUS, 
-    // center: SAMPLE_CENTER,
-    // boundingBox: SAMPLE_COORDS,
     description: "Go to Centennial Common to reconvene with the Wizard."
   },
+  12: {
+    type: "audio",
+    imgs: [
+      {
+        src: Wizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    audioSrc: "https://docs.google.com/uc?export=download&id=1TbBMzPzoErJ1PXawx2yX_n87NVy1ub_F",
+    button: "Hand Over Cat and Spellbook"
+  },
   13: {
-    img: Wizard,
-    type: "audio-event",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3",
-    events: [
+    type: "audio-choice",
+    audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
+    imgs: [
       {
-        startTime: 10, 
-        buttonText: "Hand Over Cat and Spellbook", 
-        endTime: 20,
-        traitorTimeline: false,
-        buttonFunc: function(e) {
-          this.setState({giveItems: true})
+        src: EvilWizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    choices: [
+      {
+        id: 1,
+        buttonText: "ADD EXAM TO POTION",
+        description: "This will forever disable the wizard's magic.",
+        buttonFunc: function(e, props) {
+          e.preventDefault();
+          store.dispatch(addSteps({steps: GOOD_FINALE, type: "GOOD_FINALE"}));
+          fadeOut(props, e);
         },
       },
       {
-        startTime: 20, 
-        buttonText: "Betray Wizard and Cat", 
-        description: "If you proceed down this path, you may steal the wizard's magic for yourself.",
-        endTime: 30,
-        traitorTimeline: false,
-        buttonFunc: function(e) {
+        id: 2,
+        buttonText: "STEAL THE WIZARD'S MAGIC",
+        description: "Push the wizard aside and take the magic for yourself.",
+        buttonFunc: function(e, props) {
           e.preventDefault();
+          store.dispatch(addSteps({steps: TRAITOR_STEPS, type: "DOUBLETRAITOR"}));
           store.dispatch(doubleTraitor());
+          fadeOut(props, e);
         },
-      },
-      {
-        startTime: 20,
-        buttonText: "Add Exam to Potion",
-        description: "Ruin the wizard's magic spell by adding the failed exam!",
-        endTime: 30,
-        traitorTimeline: false,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({examAdded: true});
-        },
-      },
-      {
-        startTime: 30, 
-        buttonText: "Throw Cat Into Cauldron", 
-        description: "Take the Cat's magic for yourself!",
-        endTime: 40,
-        traitorTimeline: true,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({catThrown: true});
-        },
-      },
-      {
-        startTime: 40, 
-        buttonText: "Steal the Wizard’s Magic!",
-        description: "Drink from the cauldron and complete the spell!", 
-        endTime: 50,
-        traitorTimeline: true,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({magicStolen: true});
-        },
-      },
-      {
-        startTime: 60, 
-        buttonText: "Turn the Wizard into a Pigeon", 
-        description: "This way, he can't bother you anymore.",
-        endTime: 70,
-        traitorTimeline: true,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({pigeon: true});
-        },
-      },
+      }
     ]
   }
-
 }
 
 export let BAD_STEPS = {
   9: {
-    type: "audio",
-    img: CatAndBook,
-    button: "Next",
-    hiddenDesc: "At this step, the user betrays the cat and catnaps them!",
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3"
+    type: "choice",
+    hiddenDesc: "At this step, the user chooses to catnap the cat. ",
+    choices: [
+      {
+        id: 1,
+        buttonText: "CATNAP THE CAT",
+        buttonFunc: function(e, props) {
+          e.preventDefault();
+          fadeOut(props, e);
+        },
+      }
+    ]
   },
   10: {
-    type: "go-dialog",
-    // boundingBox: [
-    //   [42.337338,-71.090977],
-    //   [42.337559, -71.089741],
-    //   [42.336825, -71.091075],
-    //   [42.337030, -71.089838],
-    // ],
-    center: [42.337147, -71.090267],
-    radius: 57.3024,
-    // radius: SAMPLE_RADIUS, 
-    // center: SAMPLE_CENTER,
-    // boundingBox: SAMPLE_COORDS,
-    description: "Go to Centennial Common to reconvene with the Wizard."
+    type: "audio",
+    imgs: [
+      {
+        src: AngryCat,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    button: "Next",
+    hiddenDesc: "At this step, the user betrays the cat and catnaps them!",
+    audioSrc: "https://docs.google.com/uc?export=download&id=1xW8LA1thEf1qa3w3qhKO-7E8lcQBQ14O"
   },
   11: {
-    type: "audio-event",
-    img: Wizard,
-    audioSrc: "https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3",
-    events: [
+    type: "go-dialog",
+    center: [42.337147, -71.090267],
+    radius: 57.3024,
+    description: "Go to Centennial Common to reconvene with the Wizard."
+  },
+  12: {
+    type: "audio",
+    imgs: [
       {
-        startTime: 10, 
-        buttonText: "Hand Over Cat and Spellbook", 
-        endTime: 20,
-        traitorTimeline: false,
-        buttonFunc: function(e) {
-          this.setState({giveItems: true})
+        src: Wizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    audioSrc: "https://docs.google.com/uc?export=download&id=1TbBMzPzoErJ1PXawx2yX_n87NVy1ub_F",
+    button: "Hand Over Cat and Spellbook"
+  },
+  13: {
+    type: "audio-choice",
+    audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
+    imgs: [
+    ],
+    choices: [
+      {
+        id: 1,
+        buttonText: "ALLOW WIZARD TO CONTINUE",
+        description: "Let him regain his magic and get your reward.",
+        buttonFunc: function(e, props) {
+          e.preventDefault();
+          store.dispatch(addSteps({steps: BAD_FINALE, type: "BAD_FINALE"}));
+          fadeOut(props, e);
         },
       },
       {
-        startTime: 20, 
-        buttonText: "Betray Wizard and Cat", 
-        description: "If you proceed down this path, you may steal the wizard's magic for yourself.",
-        endTime: 30,
-        traitorTimeline: false,
-        buttonFunc: function(e) {
+        id: 2,
+        buttonText: "STEAL THE WIZARD'S MAGIC",
+        description: "Push the wizard aside and take the magic for yourself.",
+        buttonFunc: function(e, props) {
           e.preventDefault();
+          store.dispatch(addSteps({steps: TRAITOR_STEPS, type: "DOUBLETRAITOR"}));
           store.dispatch(doubleTraitor());
+          fadeOut(props, e);
         },
-      },
-      {
-        startTime: 30, 
-        buttonText: "Throw Cat Into Cauldron", 
-        description: "Take the Cat's magic for yourself!",
-        endTime: 40,
-        traitorTimeline: true,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({catThrown: true});
-        },
-      },
-      {
-        startTime: 40, 
-        buttonText: "Steal the Wizard’s Magic!",
-        description: "Drink from the cauldron and complete the spell!", 
-        endTime: 50,
-        traitorTimeline: true,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({magicStolen: true});
-        },
-      },
-      {
-        startTime: 60, 
-        buttonText: "Turn the Wizard into a Pigeon", 
-        description: "This way, he can't bother you anymore.",
-        endTime: 70,
-        traitorTimeline: true,
-        buttonFunc: function(e) {
-          e.preventDefault();
-          this.setState({pigeon: true});
-        },
-      },
+      }
     ]
-  }
+  } 
 }
+
+
+export const TRAITOR_STEPS = {
+  14: {
+    type: "audio", 
+    audioSrc: "https://docs.google.com/uc?export=download&id=13GlmiW-R6ITOPFmJh70DsmAQH0004e2O",
+    imgs: [
+      {
+        src: Wizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    button: "Throw Cat Into Cauldron",
+  },
+  15: {
+    type: "audio", 
+    audioSrc: "https://docs.google.com/uc?export=download&id=18o59if5IVzi7-BXnJcE6qxaNvE-sN9Qp",
+    imgs: [
+      {
+        src: Cat,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    button: "Turn Wizard into a Pigeon",
+  },
+  16: {
+    type: "audio",
+    audioSrc: "https://docs.google.com/uc?export=download&id=1I_dIkRGQEjfg08TJKjmrmHfllP9SqOcQ",
+    imgs: [
+      {
+        src: Wizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    button: "Become the World's Most Powerful Wizard"
+  }
+};
+
+export const GOOD_FINALE = {
+  14: {
+    type: "audio", 
+    audioSrc: "https://docs.google.com/uc?export=download&id=1ohvG9l9xERrY2tKXJaeavV1TpjImQuTg",
+    imgs: [
+      {
+        src: Wizard,
+        startTime: 0,
+        endTime: 17, 
+      },
+      {
+        src: Cat,
+        startTime: 17,
+        endTime: 33, 
+      },
+      {
+        src: Wizard,
+        startTime: 33,
+        endTime: 999, 
+      }
+
+    ],
+    button: "Set the Cat Free",
+  },
+};
+
+export const BAD_FINALE = {
+  14: {
+    type: "audio", 
+    audioSrc: "https://docs.google.com/uc?export=download&id=1A41bt1lw1w2u_clAN0NQG5NOP0ofhv4z",
+    imgs: [
+      {
+        src: Wizard,
+        startTime: 0,
+        endTime: 999, 
+      }
+    ],
+    button: "Enter the Afterlife",
+  },
+};

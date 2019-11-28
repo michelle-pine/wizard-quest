@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './AudioDialog.scss';
-import fadeOut from '../../index';
+import './AudioChoice.scss';
 import Button from '../../components/Button/Button'
 import ReactAudioPlayer from 'react-audio-player';
 
-class AudioDialog extends React.Component {
+class AudioChoice extends React.Component {
   constructor(props) {
     super(props)
-    this.onButtonClick = this.onButtonClick.bind(this);
+    this.renderChoice = this.renderChoice.bind(this);
+    this.createOnClick = this.createOnClick.bind(this);
     this.onListen = this.onListen.bind(this);
     this.state = {
       audioTime: 0,
     }
-  }
-
-  onButtonClick(e) {
-    fadeOut(this.props, e);
   }
 
   onListen() {
@@ -33,38 +29,56 @@ class AudioDialog extends React.Component {
       return "";
   }
 
-  render() {
+  createOnClick(button) {
+    return function (e) {
+      button.buttonFunc(e, this.props)
+    };
+  }
+
+  renderChoice(button) {
+    let onClick = this.createOnClick(button).bind(this);
     return (
-    <div className="audio-dialog fade-in">
+      <div className="fade-in fixed-button-individual">
+        <Button key={button.id} text={button.buttonText} onClick={onClick} />
+        <p>{button.description}</p>
+      </div>
+    );
+  }
+
+  render() {
+    let choices = this.props.step.choices.map(this.renderChoice);
+    return (
+    <div className="audio-choice fade-in">
       <div className="content-container audio-container">
         <ReactAudioPlayer
           src={this.props.step.audioSrc}
-          autoPlay
-          listenInterval={1000}
           onListen={this.onListen}
+          listenInterval={1000}
+          autoPlay
           controls
           ref={(element) => { this.audioPlayer = element; }}
         />
       </div>
       <div className="img-wrapper">
         <img className="fade-in" src={this.getImgSrc()} alt="" />
-      </div>
-      <div className="button-wrapper">
-        <Button text={this.props.step.button} onClick={this.onButtonClick} />
+        </div>
+      <div className="fixed-button-wrapper">
+        {choices}
       </div>
     </div>
     );
   }
 };
 
-AudioDialog.defaultProps = {
+AudioChoice.defaultProps = {
+  
 
 };
 
-AudioDialog.propTypes = {
+AudioChoice.propTypes = {
   step: PropTypes.object,
   stepNum: PropTypes.number,
   history: PropTypes.object,
 };
 
-export default AudioDialog;
+export default AudioChoice;

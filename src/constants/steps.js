@@ -1,10 +1,12 @@
-import Cat from '../media/cat.png';
+import Cat from '../media/cat.gif';
 import EvilWizard from '../media/evilwizard.png';
-import Wizard from '../media/neutralwizard.png';
+import Wizard from '../media/neutralwizard.gif';
 import Book from '../media/book-filler.png';
-import CatAndBook from '../media/catandbook.png';
+import CatAndBookFall from '../media/catandbook-fall.gif';
+import CatAndBookNoBook from '../media/catandbook-no-book.gif';
+import CatAndBook from '../media/catandbook.gif';
 import AngryCat from '../media/angrycat.png';
-import CatAndBookAndExam from '../media/catandbookandexam.png';
+import CatAndBookAndExam from '../media/catandbookandexam.gif';
 import fadeOut from '../index'
 
 import store from '../store/index'
@@ -67,8 +69,18 @@ export let STEPS = {
     button: "Open Book",
     imgs: [
       {
-        src: CatAndBook,
+        src: CatAndBookNoBook,
         startTime: 0,
+        endTime: 5, 
+      },
+      {
+        src: CatAndBookFall,
+        startTime: 5,
+        endTime: 6, 
+      },
+      {
+        src: CatAndBook,
+        startTime: 6,
         endTime: 999, 
       }
     ],
@@ -285,7 +297,13 @@ export const TRAITOR_STEPS = {
     button: "Throw Cat Into Cauldron",
   },
   15: {
-    type: "audio", 
+    type: "audio",
+    backgroundFilter: {
+      type: "good",
+      startTime: 8,
+      endTime: 999,
+      fadeIn: true,
+    },
     audioSrc: "https://docs.google.com/uc?export=download&id=18o59if5IVzi7-BXnJcE6qxaNvE-sN9Qp",
     imgs: [
       {
@@ -299,6 +317,12 @@ export const TRAITOR_STEPS = {
   16: {
     type: "audio",
     audioSrc: "https://docs.google.com/uc?export=download&id=1I_dIkRGQEjfg08TJKjmrmHfllP9SqOcQ",
+    backgroundFilter: {
+      type: "good",
+      startTime: 0,
+      endTime: 999,
+      fadeIn: false,
+    },
     imgs: [
       {
         src: Wizard,
@@ -314,6 +338,12 @@ export const GOOD_FINALE = {
   14: {
     type: "audio", 
     audioSrc: "https://docs.google.com/uc?export=download&id=1ohvG9l9xERrY2tKXJaeavV1TpjImQuTg",
+    backgroundFilter: {
+      type: "none",
+      startTime: 0.5,
+      endTime: 999,
+      fadeIn: false,
+    },
     imgs: [
       {
         src: Wizard,
@@ -338,11 +368,18 @@ export const GOOD_FINALE = {
 
 export const BAD_FINALE = {
   14: {
+    backgroundFilter: "badMagic", 
     type: "audio", 
+    backgroundFilter: {
+      type: "bad",
+      startTime: 9,
+      endTime: 999,
+      fadeIn: true,
+    },
     audioSrc: "https://docs.google.com/uc?export=download&id=1A41bt1lw1w2u_clAN0NQG5NOP0ofhv4z",
     imgs: [
       {
-        src: Wizard,
+        src: EvilWizard,
         startTime: 0,
         endTime: 999, 
       }

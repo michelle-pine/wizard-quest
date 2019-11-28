@@ -33,14 +33,31 @@ class AudioDialog extends React.Component {
       return "";
   }
 
+  getBackgroundFilter() {
+    const filter = this.props.step.backgroundFilter;
+    const curTime = this.state.audioTime;
+    if (filter && curTime >= filter.startTime && curTime <= filter.endTime) {
+      let filterClass = `background-filter ${filter.type} ${filter.fadeIn ? "filter-fade-in" : null}`;
+      return (
+        <div className={filterClass} >
+          <div className={filter.type ==="bad" ? "lightning" : "glow"}></div>
+        </div>
+      );
+    }
+    else {
+      return null;
+    }
+  }
+
   render() {
     return (
     <div className="audio-dialog fade-in">
+      {this.getBackgroundFilter()}
       <div className="content-container audio-container">
         <ReactAudioPlayer
           src={this.props.step.audioSrc}
           autoPlay
-          listenInterval={1000}
+          listenInterval={500}
           onListen={this.onListen}
           controls
           ref={(element) => { this.audioPlayer = element; }}

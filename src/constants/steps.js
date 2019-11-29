@@ -1,11 +1,23 @@
 import Cat from '../media/cat.gif';
 import EvilWizard from '../media/evilwizard.png';
+import CatIntoCauldron from '../media/catIntoCauldron.gif';
+import CatIntoCauldronWizard from '../media/catIntoCaudronWizard.gif';
+import Cauldron from '../media/cauldronOnly.gif'; 
 import Wizard from '../media/neutralwizard.gif';
-import Book from '../media/book-filler.png';
 import CatAndBookFall from '../media/catandbook-fall.gif';
 import CatAndBookNoBook from '../media/catandbook-no-book.gif';
 import CatAndBook from '../media/catandbook.gif';
-import AngryCat from '../media/angrycat.png';
+import AngryCat from '../media/angrycat.gif';
+import AngryCat1 from '../media/angrycat1.gif';
+import WizardAndCauldron from '../media/wizardAndCauldron.gif';
+import WizardRedEyes from '../media/wizardRedEyes.gif';
+import WizardRedEyes2 from '../media/wizardRedEyes2.gif';
+import WizardFalling from '../media/wizardFalling.gif';
+import WizardIntoPigeon from '../media/wizardIntoPigeon.gif';
+import WizardRuinedSpell from '../media/wizardRuinedSpell.gif';
+import WizardRuinedSpell2 from '../media/wizardRuinedSpell2.png';
+import Blank from '../media/blank.png';
+
 import CatAndBookAndExam from '../media/catandbookandexam.gif';
 import fadeOut from '../index'
 
@@ -174,7 +186,7 @@ export let GOOD_STEPS = {
     audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
     imgs: [
       {
-        src: EvilWizard,
+        src: WizardAndCauldron,
         startTime: 0,
         endTime: 999, 
       }
@@ -224,8 +236,13 @@ export let BAD_STEPS = {
     type: "audio",
     imgs: [
       {
-        src: AngryCat,
+        src: AngryCat1,
         startTime: 0,
+        endTime: 1, 
+      },
+      {
+        src: AngryCat,
+        startTime: 1,
         endTime: 999, 
       }
     ],
@@ -255,6 +272,11 @@ export let BAD_STEPS = {
     type: "audio-choice",
     audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
     imgs: [
+      {
+        src: WizardAndCauldron,
+        startTime: 0,
+        endTime: 999,
+      }
     ],
     choices: [
       {
@@ -289,8 +311,13 @@ export const TRAITOR_STEPS = {
     audioSrc: "https://docs.google.com/uc?export=download&id=13GlmiW-R6ITOPFmJh70DsmAQH0004e2O",
     imgs: [
       {
-        src: Wizard,
+        src: WizardAndCauldron,
         startTime: 0,
+        endTime: 1, 
+      },
+      {
+        src: WizardFalling,
+        startTime: 1,
         endTime: 999, 
       }
     ],
@@ -307,10 +334,20 @@ export const TRAITOR_STEPS = {
     audioSrc: "https://docs.google.com/uc?export=download&id=18o59if5IVzi7-BXnJcE6qxaNvE-sN9Qp",
     imgs: [
       {
-        src: Cat,
+        src: Cauldron,
         startTime: 0,
+        endTime: 3, 
+      },
+      {
+        src: CatIntoCauldron,
+        startTime: 4,
+        endTime: 6, 
+      },
+      {
+        src: Cauldron,
+        startTime: 6,
         endTime: 999, 
-      }
+      },
     ],
     button: "Turn Wizard into a Pigeon",
   },
@@ -325,8 +362,13 @@ export const TRAITOR_STEPS = {
     },
     imgs: [
       {
-        src: Wizard,
+        src: EvilWizard,
         startTime: 0,
+        endTime: 0.5, 
+      },
+      {
+        src: WizardIntoPigeon,
+        startTime: 0.5,
         endTime: 999, 
       }
     ],
@@ -346,8 +388,18 @@ export const GOOD_FINALE = {
     },
     imgs: [
       {
-        src: Wizard,
+        src: WizardAndCauldron,
         startTime: 0,
+        endTime: .2, 
+      },
+      {
+        src: WizardRuinedSpell,
+        startTime: 0,
+        endTime: 2, 
+      },
+      {
+        src: WizardAndCauldron,
+        startTime: 2,
         endTime: 17, 
       },
       {
@@ -358,6 +410,11 @@ export const GOOD_FINALE = {
       {
         src: Wizard,
         startTime: 33,
+        endTime: 41, 
+      },
+      {
+        src: Blank,
+        startTime: 41,
         endTime: 999, 
       }
 
@@ -379,10 +436,35 @@ export const BAD_FINALE = {
     audioSrc: "https://docs.google.com/uc?export=download&id=1A41bt1lw1w2u_clAN0NQG5NOP0ofhv4z",
     imgs: [
       {
-        src: EvilWizard,
+        src: WizardAndCauldron,
         startTime: 0,
+        endTime: 3, 
+      },
+      {
+        src: CatIntoCauldronWizard,
+        startTime: 3,
+        endTime: 5, 
+      },
+      {
+        src: WizardAndCauldron,
+        startTime: 5,
+        endTime: 18, 
+      },
+      {
+        src: WizardRedEyes,
+        startTime: 18,
+        endTime: 20, 
+      },
+      {
+        src: WizardRedEyes2,
+        startTime: 20,
+        endTime: 41, 
+      },
+      {
+        src: Blank,
+        startTime: 41,
         endTime: 999, 
-      }
+      },
     ],
     button: "Enter the Afterlife",
   },

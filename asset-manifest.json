@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wizard-quest/static/css/main.08197523.chunk.css",
-    "main.js": "/wizard-quest/static/js/main.ee5b943b.chunk.js",
-    "main.js.map": "/wizard-quest/static/js/main.ee5b943b.chunk.js.map",
+    "main.js": "/wizard-quest/static/js/main.67c85cd9.chunk.js",
+    "main.js.map": "/wizard-quest/static/js/main.67c85cd9.chunk.js.map",
     "runtime-main.js": "/wizard-quest/static/js/runtime-main.46e24a3a.js",
     "runtime-main.js.map": "/wizard-quest/static/js/runtime-main.46e24a3a.js.map",
     "static/css/2.0a8258bb.chunk.css": "/wizard-quest/static/css/2.0a8258bb.chunk.css",
     "static/js/2.0c0b12e2.chunk.js": "/wizard-quest/static/js/2.0c0b12e2.chunk.js",
     "static/js/2.0c0b12e2.chunk.js.map": "/wizard-quest/static/js/2.0c0b12e2.chunk.js.map",
     "index.html": "/wizard-quest/index.html",
-    "precache-manifest.516f6d3768b50044779d1735bc311187.js": "/wizard-quest/precache-manifest.516f6d3768b50044779d1735bc311187.js",
+    "precache-manifest.d33d2aa78ce608c50ca95c73097f20af.js": "/wizard-quest/precache-manifest.d33d2aa78ce608c50ca95c73097f20af.js",
     "service-worker.js": "/wizard-quest/service-worker.js",
     "static/css/2.0a8258bb.chunk.css.map": "/wizard-quest/static/css/2.0a8258bb.chunk.css.map",
     "static/css/main.08197523.chunk.css.map": "/wizard-quest/static/css/main.08197523.chunk.css.map",
@@ -48,6 +48,6 @@
     "static/css/2.0a8258bb.chunk.css",
     "static/js/2.0c0b12e2.chunk.js",
     "static/css/main.08197523.chunk.css",
-    "static/js/main.ee5b943b.chunk.js"
+    "static/js/main.67c85cd9.chunk.js"
   ]
 }

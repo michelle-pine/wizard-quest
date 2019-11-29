@@ -364,11 +364,11 @@ export const TRAITOR_STEPS = {
       {
         src: EvilWizard,
         startTime: 0,
-        endTime: 0.5, 
+        endTime: 1, 
       },
       {
         src: WizardIntoPigeon,
-        startTime: 0.5,
+        startTime: 1,
         endTime: 999, 
       }
     ],

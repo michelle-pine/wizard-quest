@@ -1,4 +1,5 @@
 /* PLOP_INJECT_IMPORT */
+import TextDialog from './TextDialog';
 import AudioChoice from './AudioChoice';
 import AudioEventDialog from './AudioEventDialog';
 import ChoiceDialog from './ChoiceDialog';
@@ -11,6 +12,7 @@ import Button from './Button';
 
 export {
   /* PLOP_INJECT_EXPORT */
+	TextDialog,
 	AudioChoice,
 	AudioEventDialog,
 	ChoiceDialog,

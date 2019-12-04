@@ -404,6 +404,11 @@ export const TRAITOR_STEPS = {
       }
     ],
     button: "Become the World's Most Powerful Wizard"
+  },
+  17: {
+    type: "text",
+    title: "You're Now a Wizard!",
+    subtitle: "Unfortunately, despite suddenly being the most powerful wizard of all time, you still have classes to take..."
   }
 };
 
@@ -457,6 +462,11 @@ export const GOOD_FINALE = {
     ],
     button: "Set the Cat Free",
   },
+  15: {
+    type: "text",
+    title: "You Saved the World!",
+    subtitle: "You've completed the game, which means the cat is free to wander as he pleases—and you're free to study for your exams!"
+  }
 };
 
 export const BAD_FINALE = {
@@ -508,4 +518,9 @@ export const BAD_FINALE = {
     ],
     button: "Enter the Afterlife",
   },
+  15: {
+    type: "text",
+    title: "You died.",
+    subtitle: "But at least you won't have to take exams, right?"
+  }
 };

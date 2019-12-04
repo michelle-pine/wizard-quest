@@ -46,6 +46,9 @@ export let STEPS = {
   },
   2: {
     type: "audio",
+    transcriptions: [
+      "WIZARD: Ah! You’ve returned! Wonderful! And uninjured? You’re a tough ol’ cookie aren’t you? Knew I made a good choice... (pause) Now there’s only two things left. You see I need a cat. Very strange little black cat from my dimension. Yes... Oh! And I of course need my spellbook. Can’t cast spells without that, no-sir-ee. Now I’m not sure where that cat got off to, magic’s tricky like that, maybe try cat treats? Cat’s sure like treats...  (pause) RIGHT! The spell book! That’ll be hiding near lots of other books. Maybe a library perhaps? Eh. I have no idea. This world is strange!! Good luck! Your reward is in reach! (pause) I’d better get to the dining hall kitchens to prepare the cauldron…"
+    ],
     button: "Next",
     imgs: [
       {
@@ -59,6 +62,9 @@ export let STEPS = {
   },
   3: {
     type: "audio",
+    transcriptions: [
+      "CAT: He’s gone? Good. Wellllll. Cat’s out of the bag, as they say, hmm? Yes he needs me… The book may answer your questions…"
+    ],
     button: "Next",
     imgs: [
       {
@@ -105,6 +111,9 @@ export let STEPS = {
   },
   7: {
     type: "audio",
+    transcriptions: [
+      "CAT: Apologies for not trusting you before. I had to watch and be sure you are not willingly in league with my former host. (pause) You have two options, my friend. Follow the word of the Grand Warlock, act as the catalyst in your world’s destruction. Or. Save the world, turn against him. And don’t try to turn and run. He’ll just find another. There is a reason he was banished specifically here, to a college campus. This is a place void of magic, void of wonder. A single piece of antimagic, the least magical object in your world, a college exam, can destroy his spell and render him permanently powerless. He is a buffoon. He will not notice the addition. That building with the statue of the man and the cat should be a good source. I can practically feel the anti-magic flowing out of that building. It’s your choice."
+    ],
     imgs: [
       {
         src: CatAndBook,
@@ -152,6 +161,9 @@ export let GOOD_STEPS = {
   },
   10: {
     type: "audio",
+    transcriptions: [
+      "CAT: There. A 22% on a final… That should do and I’m sure it won’t be all that missed. We should be ready to head back to the old coot. He’ll never be the wiser."
+    ],
     imgs: [
       {
         src: CatAndBookAndExam,
@@ -171,6 +183,9 @@ export let GOOD_STEPS = {
   },
   12: {
     type: "audio",
+    transcriptions: [
+      "WIZARD: Ah! There’s that blasted cat. And my book! Wonderful! You’ve really been such a wonderful help. Give me the cat."
+    ],
     imgs: [
       {
         src: Wizard,
@@ -183,6 +198,9 @@ export let GOOD_STEPS = {
   },
   13: {
     type: "audio-choice",
+    transcriptions: [
+      "WIZARD: You fool! You’ve fallen right into my trap. Once I add the cat my power will return and I can take over the world!"
+    ],
     audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
     imgs: [
       {
@@ -258,6 +276,9 @@ export let BAD_STEPS = {
   },
   12: {
     type: "audio",
+    transcriptions: [
+      "WIZARD: Ah! There’s that blasted cat. And my book! Wonderful! You’ve really been such a wonderful help. Give me the cat."
+    ],
     imgs: [
       {
         src: Wizard,
@@ -271,6 +292,9 @@ export let BAD_STEPS = {
   13: {
     type: "audio-choice",
     audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
+    transcriptions: [
+      "WIZARD: You fool! You’ve fallen right into my trap. Once I add the cat my power will return and I can take over the world!"
+    ],
     imgs: [
       {
         src: WizardAndCauldron,
@@ -308,6 +332,9 @@ export let BAD_STEPS = {
 export const TRAITOR_STEPS = {
   14: {
     type: "audio", 
+    transcriptions: [
+      "WIZARD: Ah! What are you doing?"
+    ],
     audioSrc: "https://docs.google.com/uc?export=download&id=13GlmiW-R6ITOPFmJh70DsmAQH0004e2O",
     imgs: [
       {
@@ -325,6 +352,10 @@ export const TRAITOR_STEPS = {
   },
   15: {
     type: "audio",
+    transcriptions: [
+      "CAT: Unhand me! Stop this!",
+      "WIZARD: Nooooo! You traitor! That’s my cat! My magic! You can’t steal my magic!"
+    ],
     backgroundFilter: {
       type: "good",
       startTime: 8,
@@ -386,6 +417,11 @@ export const GOOD_FINALE = {
       endTime: 999,
       fadeIn: false,
     },
+    transcriptions: [
+      "WIZARD: What? What did you just row inthrow?? A FINAL EXAMINATION??? 22%???? DID THEY STUDY AT ALL??? What’s happening? Wait! No! My magic! What did you do!?",
+      "CAT: The least magical thing in existence, yes. We sabotaged the spell you fool. You’ll never hurt another soul with you magic permanently damaged. And I? I’ll be free to wander… bound to you no more.",
+      "WIZARD: My magic! Nooo!"
+    ],
     imgs: [
       {
         src: WizardAndCauldron,
@@ -433,6 +469,10 @@ export const BAD_FINALE = {
       endTime: 999,
       fadeIn: true,
     },
+    transcriptions: [
+      "CAT: Unhand me! Stop this!",
+      "WIZARD: With my power returned I can take over the world! AhaAHAHAHAHA! You’ve brought the end of mankind, little college student. And since I promised you a reward...here’s yours: the end of your miserable academic life!"
+    ],
     audioSrc: "https://docs.google.com/uc?export=download&id=1A41bt1lw1w2u_clAN0NQG5NOP0ofhv4z",
     imgs: [
       {

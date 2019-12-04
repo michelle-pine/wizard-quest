@@ -13,6 +13,9 @@
 
 .audio-dialog {
   z-index: 10;
+  .transcriptions-wrapper {
+    text-align: left;
+  }
   .background-filter {
     z-index: -1;
     position: fixed;

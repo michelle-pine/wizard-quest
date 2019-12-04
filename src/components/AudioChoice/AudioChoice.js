@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './AudioChoice.scss';
-import Button from '../../components/Button/Button'
+import Button from '../../components/Button/Button';
+import Modal from '../Modal/Modal';
 import ReactAudioPlayer from 'react-audio-player';
 
 class AudioChoice extends React.Component {
@@ -10,9 +11,33 @@ class AudioChoice extends React.Component {
     this.renderChoice = this.renderChoice.bind(this);
     this.createOnClick = this.createOnClick.bind(this);
     this.onListen = this.onListen.bind(this);
+    this.onModalClose = this.onModalClose.bind(this);
+    this.onModalOpen = this.onModalOpen.bind(this);
     this.state = {
       audioTime: 0,
     }
+  }
+
+  onModalClose(e) {
+    this.setState({modalOpen: false});
+  }
+
+  onModalOpen(e) {
+    this.setState({modalOpen: true});
+  }
+
+  renderModal() {
+    let modal = null;
+
+    if (this.state.modalOpen && this.props.step.transcriptions) {
+      const transcriptions = this.props.step.transcriptions.map(text => <p>{text}</p>);
+      modal = <Modal onClose={this.onModalClose}>
+        <div className="transcriptions-wrapper">
+          {transcriptions}
+        </div>
+      </Modal>
+    }
+    return modal;
   }
 
   onListen() {
@@ -47,6 +72,7 @@ class AudioChoice extends React.Component {
 
   render() {
     let choices = this.props.step.choices.map(this.renderChoice);
+    const transcriptionButton = this.props.step.transcriptions ? <a tabIndex="0" onClick={this.onModalOpen}>Open Transcription</a> : null;
     return (
     <div className="audio-choice fade-in">
       <div className="content-container audio-container">
@@ -58,6 +84,7 @@ class AudioChoice extends React.Component {
           controls
           ref={(element) => { this.audioPlayer = element; }}
         />
+        {transcriptionButton}
       </div>
       <div className="img-wrapper">
         <img className="fade-in" src={this.getImgSrc()} alt="" />
@@ -65,6 +92,7 @@ class AudioChoice extends React.Component {
       <div className="fixed-button-wrapper">
         {choices}
       </div>
+      {this.renderModal()}
     </div>
     );
   }

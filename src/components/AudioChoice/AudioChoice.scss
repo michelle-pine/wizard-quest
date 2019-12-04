@@ -1,6 +1,9 @@
 @import '../../index.scss';
 
 .audio-choice {
+  .modal-container {
+    z-index: 9999;
+  }
   .audio-container {
     position: fixed;
     left: 0;

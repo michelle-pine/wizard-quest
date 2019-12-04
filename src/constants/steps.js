@@ -199,7 +199,7 @@ export let GOOD_STEPS = {
   13: {
     type: "audio-choice",
     transcriptions: [
-      "WIZARD: You fool! You’ve fallen right into my trap. Once I add the cat my power will return and I can take over the world!"
+      "WIZARD: There we go find the right spell… HmmmhahahahahaHAHAHA! Add the tears, and the blood… the snake, the stone, smash the crystal ball in... You fool! You’ve fallen right into my trap. Once I add the cat my power will return and I can take over the world!"
     ],
     audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
     imgs: [
@@ -293,7 +293,7 @@ export let BAD_STEPS = {
     type: "audio-choice",
     audioSrc: "https://docs.google.com/uc?export=download&id=1O3k0o6puunVZYugwLiDE9d-3SJ6gQWaT",
     transcriptions: [
-      "WIZARD: You fool! You’ve fallen right into my trap. Once I add the cat my power will return and I can take over the world!"
+      "WIZARD: There we go find the right spell… HmmmhahahahahaHAHAHA! Add the tears, and the blood… the snake, the stone, smash the crystal ball in... You fool! You’ve fallen right into my trap. Once I add the cat my power will return and I can take over the world!"
     ],
     imgs: [
       {

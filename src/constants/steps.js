@@ -156,7 +156,7 @@ export let GOOD_STEPS = {
   9: {
     type: "go-dialog",
     center: [42.337592, -71.090251],
-    radius: 31.53,
+    radius: 33.53,
     description: "Go to Shillman Hall"
   },
   10: {

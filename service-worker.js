@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wizard-quest/precache-manifest.722abf38ff70f855bb6cb1b00f651d61.js"
+  "/wizard-quest/precache-manifest.a0475d46a3ddc2438fab3569c10e47e7.js"
 );
 
 self.addEventListener('message', (event) => {

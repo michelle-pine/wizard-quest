@@ -8,32 +8,18 @@ import Modal from '../Modal/Modal';
 import { insidePolygon, insideCircle } from 'geolocation-utils';
 
 
+
 class GoDialog extends React.Component {
   constructor(props) {
     super(props);
     this.onButtonClick = this.onButtonClick.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-    this.setLocation = this.setLocation.bind(this);
     this.state = {
       modalOpen: false,
       loaderShow: false,
-      location: null,
 
     }
-  }
-
-  componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(this.setLocation, function(error) {
-        this.setState({loaderShow: false});
-        alert("You don't have geolocation services enabled. Enable them before continuing.")
-      }.bind(this));
-    }
-  }
-
-  setLocation(position) {
-    console.log(position)
-    this.setState({location: position.coords});
+    
   }
 
   convertCoordinates(lat, long) {
@@ -46,8 +32,8 @@ class GoDialog extends React.Component {
 
   onButtonClick(e) {
     this.setState({loaderShow: true});
-    if (this.state.location) {
-      let cur = [this.state.location.longitude, this.state.location.latitude];
+    if (this.props.location) { 
+      let cur = [this.props.location.longitude, this.props.location.latitude];
       if (this.insideRadius(cur, this.props.step)) {
         fadeOut(this.props, e);
       }
@@ -61,7 +47,7 @@ class GoDialog extends React.Component {
       this.setState({modalOpen: true});
     }
   }
-
+  
   onModalClose(e) {
     e.preventDefault();
     this.setState({modalOpen: false});
@@ -101,6 +87,7 @@ GoDialog.propTypes = {
   step: PropTypes.object,
   stepNum: PropTypes.number,
   history: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default GoDialog;

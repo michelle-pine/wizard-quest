@@ -39,9 +39,14 @@ class Step extends React.Component {
 
   addLocationServices() {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(this.setLocation, function(error) {}, {enableHighAccuracy: true, maximumAge: 0, timeout: 1000});
+      navigator.geolocation.watchPosition(this.setLocation, function(error) {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            alert("You don't have geolocation services enabled. Enable them before continuing.")
+            break;
+        } 
+      }, {enableHighAccuracy: true, maximumAge: 0, timeout: 1000});
     } else {
-      this.setState({loaderShow: false});
       alert("You don't have geolocation services enabled. Enable them before continuing.")
     }
   }
